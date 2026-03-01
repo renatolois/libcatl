@@ -1,0 +1,34 @@
+documentate include/hash-algorithms/djb2.h
+documentate include/arena/arena.h
+
+documentate structs with doxygen
+
+create clear() for stack/queue
+
+change stack/queue/deque to blocks ptr, instead linked list.
+
+create unrolled linked list;
+
+change stack/queue->length to ptr to internal list->length
+
+structures to implement
+  unrolled linked list -> queue
+  queue
+  deque
+  hashmap
+  ring buffer
+
+arena
+
+bitmasks operations
+
+algorithms implementation:
+  djbl2
+  fnv-1a
+  crc32
+  murmurhash2
+  murmurhash3
+  xxhash
+  siphash
+
+create thread safely arena, stack, etc...
