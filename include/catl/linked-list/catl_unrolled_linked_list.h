@@ -12,6 +12,12 @@ typedef struct catl_unrolled_linked_list_t {
 } catl_unrolled_linked_list_t;
 */
 
+typedef struct catl_unrolled_linked_list_t {
+  size_t block_size;
+  catl_linked_list_t* blocks; 
+  void (* delete_function )(void*);
+} catl_unrolled_linked_list_t;
+
 /**
  * @brief  Create a new unrolled linked list
  * @details  The memory must be freed by catl_unrolled_linked_list_destroy()
@@ -20,7 +26,7 @@ typedef struct catl_unrolled_linked_list_t {
  * @param delete_function  Pointer to function used by destroy() and delete()
  * @return  catl_unrolled_linked_list_t pointer or NULL if failed to allocate memory
  */
-catl_unrolled_linked_list_t* catl_unrolled_linked_list_create(size_t data_size, void (* delete_function )(void*));
+catl_unrolled_linked_list_t* catl_unrolled_linked_list_create(size_t data_size, size_t block_size, void (* delete_function )(void*));
 
 /**
  * @brief  Frees the memory allocated by catl_unrolled_linked_list_create()
